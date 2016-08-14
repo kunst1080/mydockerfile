@@ -5,7 +5,11 @@ ENV USER kunst
 ENV HOME /home/$USER
 
 # ADDITIONAL PACKAGES
-#RUN apt-get -y install openjdk-8-jdk scala
+RUN apt-get update -y
+RUN apt-get install -y tmux nkf athena-jot rs mecab sl jq moreutils num-utils
+RUN apt-get install -y nodejs ruby rubygems openjdk-8-jdk scala
+RUN apt-get install -y libssl-dev libreadline-dev zlib1g-dev
+RUN apt-get clean
 
 # USER
 RUN useradd $USER -m
